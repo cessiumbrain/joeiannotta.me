@@ -2,3 +2,8 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
+.img-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
