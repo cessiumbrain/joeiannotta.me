@@ -29,16 +29,24 @@ font-size: 1.5rem;
 
 footer {
     align-items: center;
-    height: 15vh;
+    height: auto;
     width: 100%;
     background-color: black;
     position: absolute;
     bottom: 0;
+
     
 }
 
-a {
-    color: white !important;
+#container a {
+    animation-name: fade-in;
+    animation-duration: 10s;
+    color: white;
+}
+
+#footer a {
+    animation-name: fade-in;
+    animation-duration: 10s;
 }
 
 a:hover {
@@ -46,3 +54,11 @@ a:hover {
 }
         
 
+@keyframes fade-in {
+    from {
+        color: rgba(255,0,0,0.0);
+    }
+    to {
+        color: rgba(255,255,255,1.0);
+    }
+}
