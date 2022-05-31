@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="./win95.css" rel="stylesheet"> 
+<body>
+    <div class="desktop-wallpaper">
+
+        <div class="desktop-grid">
+            <div class="grid-square" id="github-square">
+                <img class="grid-square-child" src="./images/26.png">
+                <span class="grid-square-child">GitHub</span>
+            </div>
+            <div class="grid-square" id="linkedIn-square">
+                <img class="grid-square-child" src="./images/27.jpg">
+                <span class="grid-square-child">LinkedIn</span>
+            </div>
+            
+        </div>
+        <div class="menu-bar">
+            <button class="start-button" onclick="onStartBtnClick()">
+                <img class="start-logo" src="./images/22.png"/>
+                <span class="start-span">start</span>
+            </button>
+            <div class="system-tray">
+                <img src="./images/23.png">
+                <div class="clock">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="start-menu">
+            <a href="./about.html">
+              <div class="start-menu-app">
+                <img src="./images/28.png">
+                <span>About Me</span>
+            </div>  
+            </a>
+            
+            <a href="./portfolio.html">
+                <div class="start-menu-app">
+                    <img src="./images/24.png">
+                    <span>Portfolio</span>
+                </div>    
+            </a>
+            
+        </div>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script>
+
+    //START MENU LOGIC--------------------------------->
+    let startMenuShown = false;
+    const onStartBtnClick = () =>{        
+        if(startMenuShown===false){
+            $('.start-menu')
+                .addClass('slide-up-animation')
+                .removeClass('slide-down-animation')
+            startMenuShown=true
+        } else {
+            $('.start-menu')
+                .addClass('slide-down-animation')
+                .removeClass('slide-up-animation')
+            startMenuShown=false
+        }
+    }
+
+    //CLOCK LOGIC---------------------------->
+    const now = new Date()
+    var mins = ('0' + now.getMinutes()).slice(-2);
+    var hr = now.getHours();
+    hr>12 ? hr-=12 : '';
+    $('.clock').text(`${hr}:${mins}`)
+
+    //CLICK LISTENER LOGIC--------------------------->
+
+
+    let selectedGridSquare = null
+    const gridSquareChildren = document.querySelectorAll('.grid-square > *');
+
+    //destktop double clicks on grid-squares select target, unselect others and navigate- 
+    //single clicks select target and unselect others, 
+    //single clicks off grid squares deselect all
+
+    //DOUBLE CLICK ON GRID SQUARES
+    $('.grid-square > *').on('dblclick', (e)=>{
+        selectedGridSquare = e.target.parentElement
+        console.log(selectedGridSquare)
+        if(selectedGridSquare.id==="github-square"){
+            window.open('https://github.com/cessiumbrain', '_blank')
+        } else if (selectedGridSquare.id==="linkedIn-square"){
+            window.open('https://www.linkedin.com/in/joe-iannotta-6a29328a/', '_blank')
+        }
+     e.target.parentElement.childNodes.forEach(child=>{
+         child.classList='selected'
+     })
+    })
+
+    
+    //listen for clicks not on grid squares and make sure all grid square children have no selected class
+    //SINGLE CLICK ON OR OFF GRID-SQUARES
+    document.addEventListener('click', (e)=>{
+        //if the target isn't app logo or text then unselect all of them
+        if(e.target !== selectedGridSquare){
+            
+            console.log('click off grid square')
+            gridSquareChildren.forEach(child=>{
+                child.classList=''
+            })
+        } else if(e.target.parentElement.className === "grid-square"){
+            return
+        };      
+    })
+
+
+</script>
+</html>
