@@ -183,7 +183,14 @@ body {
         position: absolute;
         bottom:8%;
         box-shadow: inset 2px 2px 2px 0px rgb(205, 204, 204);
+        font-size: .9rem;
+        width: 200px;
     }
+
+    .start-menu-app span {
+     margin: 5px;
+
+ }
 }
 /* Keyframes */
 @keyframes slide-up {
