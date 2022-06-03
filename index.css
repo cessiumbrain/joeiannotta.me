@@ -33,9 +33,11 @@ footer {
     width: 100%;
     background-color: black;
     position: absolute;
-    bottom: 0;
+    bottom: 0;   
+}
 
-    
+footer img {
+    height: 20px;
 }
 
 #container a {
@@ -44,7 +46,7 @@ footer {
     color: white;
 }
 
-#footer a {
+#footer * {
     animation-name: fade-in;
     animation-duration: 10s;
 }
@@ -57,8 +59,10 @@ a:hover {
 @keyframes fade-in {
     from {
         color: rgba(255,0,0,0.0);
+        opacity: 0;
     }
     to {
         color: rgba(255,255,255,1.0);
+        opacity: 1;
     }
 }
