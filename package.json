@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cessiumbrain/joeiannotta.me#readme",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0"
   }
 }

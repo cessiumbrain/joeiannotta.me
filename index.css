@@ -52,8 +52,10 @@ footer img {
 }
 
 a:hover {
-    color: #686464 !important
+
+    filter:brightness(40%)
 }
+
         
 
 @keyframes fade-in {
