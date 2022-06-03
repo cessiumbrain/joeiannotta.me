@@ -143,7 +143,7 @@ body {
     background-color: rgb(179,179,179);
     width: 20%;
     position: absolute;
-    bottom:8%;
+    bottom:54px;
     box-shadow: inset 2px 2px 2px 0px rgb(205, 204, 204);
 }
 
