@@ -128,15 +128,41 @@
     //listen for clicks not on grid squares and make sure all grid square children have no selected class
     //SINGLE CLICK ON OR OFF GRID-SQUARES
     document.addEventListener('click', (e)=>{
+       
         //if the target isn't app logo or text then unselect all of them
-        if(e.target !== selectedGridSquare){
-            
-            console.log('click off grid square')
+        if(e.target.parentElement.className !== 'grid-square'){
             gridSquareChildren.forEach(child=>{
                 child.classList=''
             })
-        } else if(e.target.parentElement.className === "grid-square"){
-            return
+        } 
+        //if you're clicking a grid-square start checking other criteria
+        else if(e.target.parentElement.className === "grid-square"){
+            //if no square is selected- just select the one you clicked on
+            if(!selectedGridSquare){
+                selectedGridSquare = e.target.parentElement
+                e.target.parentElement.childNodes.forEach(child=>{
+                    child.className = 'selected'
+                })
+            } 
+            //if a square is selected and it's the one you clicked on- deselect it
+            else if(selectedGridSquare.id === e.target.parentElement.id){
+                selectedGridSquare = null
+                e.target.parentElement.childNodes.forEach(child=>{
+                    child.className = ''
+                })
+            } 
+            //otherwise deselect all then select the one you clicked
+            else {
+                selectedGridSquare= e.target
+                document.querySelectorAll('.grid-square').forEach(square=>{
+                    square.childNodes.forEach(child=>{
+                        child.className=''
+                    })
+                })
+                e.target.parentElement.childNodes.forEach(child=>{
+                    child.className = 'selected'
+                })
+            }
         };      
     })
 
