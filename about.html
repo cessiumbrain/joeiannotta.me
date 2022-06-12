@@ -31,8 +31,7 @@
                     <div class='card-body'>
                         <h3 class='card-title text-center'> About Me</h3>
                         <p calss='card-text'>I'm a self-taught developer humbly learning everything I can to 
-                            build things that are cool and useful.  My core competencies are Bootstrap, React, 
-                            and React Native. I have a bachelor's degree from Allegheny College in political science,
+                            build things that are cool and useful.  My core competencies are Javascript,  Bootstrap and React with some experience in MongoDB, Express, and Node.  I have a bachelor's degree from Allegheny College in political science,
                             a blue belt in Brazilian Jiu Jitsu, and I spend most of my life trying not to eat candy for
                             every meal.
                         </p>
@@ -134,12 +133,101 @@
                 
             </div>
         </div>
-        
-            
-    
-
+        <div class='row justify-content-center'>
+            <div class='col-10'>
+                <div class="card m-1">
+                    <div class="card-body">
+                        <h3 style="text-align: center">My Coding Hours</h3>
+                        <p>Here's a chart of the hours I've spent coding.  I created a simple API by publishing the google sheet where I store this data as a public CSV file, fetching that data, parsing that CSV data into appropriate arrays and data types (i.e. strings of hh:mm:ss format into decimal numbers), then feeding that into a <a href="https://www.chartjs.org/">Chart.js</a> chart object. </p>
+                    </div>
+                    <div style='width: 100%'class="card-body text-center m-1">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="./node_modules/chart.js/dist/chart.min.js"></script>
+    <script>
+        function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
 
+const data= httpGet('https://docs.google.com/spreadsheets/d/e/2PACX-1vSV0FSGWL3B8RmCN0xB9TJblJ-rQClyLZzFL4B60AM7HzahBWS1Lt1Ik66WdsCaOsaLWnzwoFZIxZj6/pub?output=csv')
+
+console.log(data)
+
+//convert CSV string to an array by splitting on either the row/line escape character seq or comma
+const arrData = data.split(/\r\n|,/)
+//shift this new array twice to remove the column labels
+arrData.shift()
+arrData.shift()
+
+//create new empty arrays for hours and dates
+let timeFormatHours = []
+let decimalFormatHours = []
+let dates = []
+
+
+//go through the array data, if the index of an item is even or zero push it to dates else push it to hours
+arrData.forEach((item, index)=>{
+    if(index===0 || index%2===0){
+        dates.push(item)
+    } else {
+        timeFormatHours.push(item)
+    }
+})
+
+//modify the hours data to be in decimal rather than time format
+timeFormatHours.forEach(timeItem=>{
+    const splitTime = timeItem.split(':')    
+    const decimalTime = (parseInt(splitTime[0]) + (parseInt(splitTime[1])/60))
+
+    decimalFormatHours.push(decimalTime)
+
+})
+
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: dates,
+        datasets: [{
+            label: 'Hours',
+            data: decimalFormatHours,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    </script>
     </body>
 </html>
