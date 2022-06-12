@@ -1,4 +1,6 @@
 ## To Do
+- about page
+    - work around github pages "interest cohort error" bug
 - win95
     - implement media query
     - finish jpeg window
