@@ -1,0 +1,30 @@
+*{
+    --retro-green: #1dea1f;
+}
+
+body {
+    background: #000000;
+    color: var(--retro-green); 
+    padding: 10px;
+  }
+  div::after {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    content:"";
+    height: 1rem;
+    width: 10px;
+    background: var(--retro-green);
+    display: inline-block;
+    animation: 1s steps(2, jump-none)infinite blink
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 100%;
+    }
+  
+    100% {
+      opacity: 0%;
+    }
+  }
