@@ -8,12 +8,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div>loading</div>
+    <div class="ui-column">
+        <ul>
+            <li class="cursor loading">loading</li>
+            <li class="about-me option"></li>
+            <li class="portfolio option"></li>
+        </ul>
+    </div> 
+    <div class="display-column">
+        <img src="/images/32.jpg"/>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>   
     <script>
+        function renderTiming(loading, typeOptionTwo, highlightOption){
+            setTimeout(()=>{
+            $('.loading').removeClass('cursor')
+            $('.about-me').addClass('typing cursor')
+        }, loading)
         setTimeout(()=>{
-            $('div').css('display', 'red')
-        }, 1000)
+            $('.about-me').removeClass('cursor')
+            $('.portfolio').addClass('typing cursor')
+        }, typeOptionTwo)
+        setTimeout(()=>{
+            $('.portfolio').removeClass('cursor')
+            $('.about-me').addClass('highlighted')
+        }, highlightOption)
+        }
+        renderTiming(5000, 7500, 11000);
+        
     </script> 
 </body>
 </html>

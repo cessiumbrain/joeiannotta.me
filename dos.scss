@@ -1,0 +1,87 @@
+@import 'typed';
+
+*{
+    --retro-green: #1dea1f;
+}
+
+body {
+    background: #000000;
+    color: var(--retro-green); 
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  .cursor::after {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    content:"";
+    height: 1rem;
+    width: 10px;
+    background: var(--retro-green);
+    display: inline-block;
+    animation: 1s steps(2, jump-none)infinite blink
+  }
+  $speeds: (
+    type: .1,
+    pause-typed: 2,
+    delete: 0,
+    pause-deleted: 1
+);
+$options: (
+    name: "",
+    caret: false,
+    caret-speed: .75,
+    caret-width: 1ch,
+    caret-color: currentColor,
+    caret-space: .1ch,
+    delay: 1,
+    iterations: infinite,
+    end-on: ""
+);
+
+.ui-column {
+    flex-basis: 33%;
+    li {
+        list-style: none;
+    }
+    .about-me.typing {
+        @include typed('About Me', null, (caret: false, iterations: 0));
+      }
+    .portfolio.typing{
+        @include typed('Portfolio', null, (caret: false, iterations: 0))
+    }
+    .highlighted {
+        background-color: var(--retro-green);
+        color: black;
+    }
+}
+    
+
+
+    .display-column {
+        flex-basis: 66%;
+        border-left: 1px solid var(--retro-green);
+        animation: reveal 10s;
+        overflow: hidden;
+    }
+
+  
+  @keyframes blink {
+    0% {
+      opacity: 100%;
+    }
+  
+    100% {
+      opacity: 0%;
+    }
+  }
+  @keyframes reveal {
+    0% { 
+        height:0vh; 
+        background: red;
+    }
+    100% { 
+        height: 100vh; 
+    }
+  }

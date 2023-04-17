@@ -1,30 +1,339 @@
-*{
-    --retro-green: #1dea1f;
+@charset "UTF-8";
+* {
+  --retro-green: #1dea1f;
 }
 
 body {
-    background: #000000;
-    color: var(--retro-green); 
-    padding: 10px;
+  background: #000000;
+  color: var(--retro-green);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cursor::after {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  content: "";
+  height: 1rem;
+  width: 10px;
+  background: var(--retro-green);
+  display: inline-block;
+  animation: 1s steps(2, jump-none) infinite blink;
+}
+
+.ui-column {
+  flex-basis: 33%;
+}
+.ui-column li {
+  list-style: none;
+}
+.ui-column .about-me.typing::before {
+  content: "​";
+  content: "​"/"About Me";
+  alt: "About Me";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-0 4.44s linear 1s 0 forwards, typed-0-final 0.8s linear 1s 1 forwards;
+}
+@keyframes typed-0-final {
+  0%, 12.5% {
+    content: "​A";
+    content: "​A"/"About Me";
+    alt: "About Me";
   }
-  div::after {
-    position: relative;
-    top: 2px;
-    left: 2px;
-    content:"";
-    height: 1rem;
-    width: 10px;
-    background: var(--retro-green);
-    display: inline-block;
-    animation: 1s steps(2, jump-none)infinite blink
+  12.501%, 25% {
+    content: "​Ab";
+    content: "​Ab"/"About Me";
+    alt: "About Me";
   }
-  
-  @keyframes blink {
-    0% {
-      opacity: 100%;
-    }
-  
-    100% {
-      opacity: 0%;
-    }
+  25.001%, 37.5% {
+    content: "​Abo";
+    content: "​Abo"/"About Me";
+    alt: "About Me";
   }
+  37.501%, 50% {
+    content: "​Abou";
+    content: "​Abou"/"About Me";
+    alt: "About Me";
+  }
+  50.001%, 62.5% {
+    content: "​About";
+    content: "​About"/"About Me";
+    alt: "About Me";
+  }
+  62.501%, 75% {
+    content: "​About ";
+    content: "​About "/"About Me";
+    alt: "About Me";
+  }
+  75.001%, 87.5% {
+    content: "​About M";
+    content: "​About M"/"About Me";
+    alt: "About Me";
+  }
+  87.501%, 100% {
+    content: "​About Me";
+    content: "​About Me"/"About Me";
+    alt: "About Me";
+  }
+}
+@keyframes typed-0 {
+  0%, 2.2512522523% {
+    content: "​A";
+    content: "​A"/"About Me";
+    alt: "About Me";
+  }
+  2.2522522523%, 4.5035045045% {
+    content: "​Ab";
+    content: "​Ab"/"About Me";
+    alt: "About Me";
+  }
+  4.5045045045%, 6.7557567568% {
+    content: "​Abo";
+    content: "​Abo"/"About Me";
+    alt: "About Me";
+  }
+  6.7567567568%, 9.008009009% {
+    content: "​Abou";
+    content: "​Abou"/"About Me";
+    alt: "About Me";
+  }
+  9.009009009%, 11.2602612613% {
+    content: "​About";
+    content: "​About"/"About Me";
+    alt: "About Me";
+  }
+  11.2612612613%, 13.5125135135% {
+    content: "​About ";
+    content: "​About "/"About Me";
+    alt: "About Me";
+  }
+  13.5135135135%, 15.7647657658% {
+    content: "​About M";
+    content: "​About M"/"About Me";
+    alt: "About Me";
+  }
+  15.7657657658%, 64.8638648649% {
+    content: "​About Me";
+    content: "​About Me"/"About Me";
+    alt: "About Me";
+  }
+  64.8648648649%, 66.6656666667% {
+    content: "​About M";
+    content: "​About M"/"About Me";
+    alt: "About Me";
+  }
+  66.6666666667%, 68.4674684685% {
+    content: "​About ";
+    content: "​About "/"About Me";
+    alt: "About Me";
+  }
+  68.4684684685%, 70.2692702703% {
+    content: "​About";
+    content: "​About"/"About Me";
+    alt: "About Me";
+  }
+  70.2702702703%, 72.0710720721% {
+    content: "​Abou";
+    content: "​Abou"/"About Me";
+    alt: "About Me";
+  }
+  72.0720720721%, 73.8728738739% {
+    content: "​Abo";
+    content: "​Abo"/"About Me";
+    alt: "About Me";
+  }
+  73.8738738739%, 75.6746756757% {
+    content: "​Ab";
+    content: "​Ab"/"About Me";
+    alt: "About Me";
+  }
+  75.6756756757%, 77.4764774775% {
+    content: "​A";
+    content: "​A"/"About Me";
+    alt: "About Me";
+  }
+  77.4774774775%, 100% {
+    content: "​";
+    content: "​"/"About Me";
+    alt: "About Me";
+  }
+}
+.ui-column .portfolio.typing::before {
+  content: "​";
+  content: "​"/"Portfolio";
+  alt: "Portfolio";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-1 4.62s linear 1s 0 forwards, typed-1-final 0.9s linear 1s 1 forwards;
+}
+@keyframes typed-1-final {
+  0%, 11.1111111111% {
+    content: "​P";
+    content: "​P"/"Portfolio";
+    alt: "Portfolio";
+  }
+  11.1121111111%, 22.2222222222% {
+    content: "​Po";
+    content: "​Po"/"Portfolio";
+    alt: "Portfolio";
+  }
+  22.2232222222%, 33.3333333333% {
+    content: "​Por";
+    content: "​Por"/"Portfolio";
+    alt: "Portfolio";
+  }
+  33.3343333333%, 44.4444444444% {
+    content: "​Port";
+    content: "​Port"/"Portfolio";
+    alt: "Portfolio";
+  }
+  44.4454444444%, 55.5555555556% {
+    content: "​Portf";
+    content: "​Portf"/"Portfolio";
+    alt: "Portfolio";
+  }
+  55.5565555556%, 66.6666666667% {
+    content: "​Portfo";
+    content: "​Portfo"/"Portfolio";
+    alt: "Portfolio";
+  }
+  66.6676666667%, 77.7777777778% {
+    content: "​Portfol";
+    content: "​Portfol"/"Portfolio";
+    alt: "Portfolio";
+  }
+  77.7787777778%, 88.8888888889% {
+    content: "​Portfoli";
+    content: "​Portfoli"/"Portfolio";
+    alt: "Portfolio";
+  }
+  88.8898888889%, 100% {
+    content: "​Portfolio";
+    content: "​Portfolio"/"Portfolio";
+    alt: "Portfolio";
+  }
+}
+@keyframes typed-1 {
+  0%, 2.1635021645% {
+    content: "​P";
+    content: "​P"/"Portfolio";
+    alt: "Portfolio";
+  }
+  2.1645021645%, 4.328004329% {
+    content: "​Po";
+    content: "​Po"/"Portfolio";
+    alt: "Portfolio";
+  }
+  4.329004329%, 6.4925064935% {
+    content: "​Por";
+    content: "​Por"/"Portfolio";
+    alt: "Portfolio";
+  }
+  6.4935064935%, 8.657008658% {
+    content: "​Port";
+    content: "​Port"/"Portfolio";
+    alt: "Portfolio";
+  }
+  8.658008658%, 10.8215108225% {
+    content: "​Portf";
+    content: "​Portf"/"Portfolio";
+    alt: "Portfolio";
+  }
+  10.8225108225%, 12.986012987% {
+    content: "​Portfo";
+    content: "​Portfo"/"Portfolio";
+    alt: "Portfolio";
+  }
+  12.987012987%, 15.1505151515% {
+    content: "​Portfol";
+    content: "​Portfol"/"Portfolio";
+    alt: "Portfolio";
+  }
+  15.1515151515%, 17.315017316% {
+    content: "​Portfoli";
+    content: "​Portfoli"/"Portfolio";
+    alt: "Portfolio";
+  }
+  17.316017316%, 64.5011645022% {
+    content: "​Portfolio";
+    content: "​Portfolio"/"Portfolio";
+    alt: "Portfolio";
+  }
+  64.5021645022%, 66.2327662338% {
+    content: "​Portfoli";
+    content: "​Portfoli"/"Portfolio";
+    alt: "Portfolio";
+  }
+  66.2337662338%, 67.9643679654% {
+    content: "​Portfol";
+    content: "​Portfol"/"Portfolio";
+    alt: "Portfolio";
+  }
+  67.9653679654%, 69.695969697% {
+    content: "​Portfo";
+    content: "​Portfo"/"Portfolio";
+    alt: "Portfolio";
+  }
+  69.696969697%, 71.4275714286% {
+    content: "​Portf";
+    content: "​Portf"/"Portfolio";
+    alt: "Portfolio";
+  }
+  71.4285714286%, 73.1591731602% {
+    content: "​Port";
+    content: "​Port"/"Portfolio";
+    alt: "Portfolio";
+  }
+  73.1601731602%, 74.8907748918% {
+    content: "​Por";
+    content: "​Por"/"Portfolio";
+    alt: "Portfolio";
+  }
+  74.8917748918%, 76.6223766234% {
+    content: "​Po";
+    content: "​Po"/"Portfolio";
+    alt: "Portfolio";
+  }
+  76.6233766234%, 78.353978355% {
+    content: "​P";
+    content: "​P"/"Portfolio";
+    alt: "Portfolio";
+  }
+  78.354978355%, 100% {
+    content: "​";
+    content: "​"/"Portfolio";
+    alt: "Portfolio";
+  }
+}
+.ui-column .highlighted {
+  background-color: var(--retro-green);
+  color: black;
+}
+
+.display-column {
+  flex-basis: 66%;
+  border-left: 1px solid var(--retro-green);
+  animation: reveal 10s;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes reveal {
+  0% {
+    height: 0vh;
+    background: red;
+  }
+  100% {
+    height: 100vh;
+  }
+}/*# sourceMappingURL=dos.css.map */
