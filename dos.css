@@ -1,14 +1,191 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 * {
   --retro-green: #1dea1f;
+  font-family: "VT323", monospace;
 }
 
 body {
-  background: #000000;
+  background: #161616;
   color: var(--retro-green);
   padding: 10px;
   display: flex;
   flex-direction: row;
+  font-size: 1.5em;
+  animation: textShadow 1.6s infinite;
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974011px 0 1px rgba(0, 30, 255, 0.5), -2.7928974011px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.0295627584px 0 1px rgba(0, 30, 255, 0.5), -0.0295627584px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.4021853855px 0 1px rgba(0, 30, 255, 0.5), -0.4021853855px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.47940379px 0 1px rgba(0, 30, 255, 0.5), -3.47940379px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401px 0 1px rgba(0, 30, 255, 0.5), -1.6125630401px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085px 0 1px rgba(0, 30, 255, 0.5), -0.7015590085px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.8969140477px 0 1px rgba(0, 30, 255, 0.5), -3.8969140477px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.8709056148px 0 1px rgba(0, 30, 255, 0.5), -3.8709056148px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.2310569634px 0 1px rgba(0, 30, 255, 0.5), -2.2310569634px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.0808429042px 0 1px rgba(0, 30, 255, 0.5), -0.0808429042px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067px 0 1px rgba(0, 30, 255, 0.5), -2.3758461067px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.2021930511px 0 1px rgba(0, 30, 255, 0.5), -2.2021930511px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780615px 0 1px rgba(0, 30, 255, 0.5), -2.8638780615px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.4887402516px 0 1px rgba(0, 30, 255, 0.5), -0.4887402516px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491306px 0 1px rgba(0, 30, 255, 0.5), -1.8948491306px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308px 0 1px rgba(0, 30, 255, 0.5), -0.0833037308px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.0976982726px 0 1px rgba(0, 30, 255, 0.5), -0.0976982726px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.4433397615px 0 1px rgba(0, 30, 255, 0.5), -3.4433397615px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838853px 0 1px rgba(0, 30, 255, 0.5), -2.1841838853px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764474px 0 1px rgba(0, 30, 255, 0.5), -2.6208764474px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+}
+body::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
 
 .cursor::after {
@@ -24,10 +201,11 @@ body {
 }
 
 .ui-column {
-  flex-basis: 33%;
+  flex-basis: 25%;
 }
 .ui-column li {
   list-style: none;
+  font-size: 2rem;
 }
 .ui-column .about-me.typing::before {
   content: "​";
@@ -312,12 +490,112 @@ body {
   background-color: var(--retro-green);
   color: black;
 }
+.ui-column .home.typing::before {
+  content: "​";
+  content: "​"/"Home";
+  alt: "Home";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-2 3.72s linear 1s 0 forwards, typed-2-final 0.4s linear 1s 1 forwards;
+}
+@keyframes typed-2-final {
+  0%, 25% {
+    content: "​H";
+    content: "​H"/"Home";
+    alt: "Home";
+  }
+  25.001%, 50% {
+    content: "​Ho";
+    content: "​Ho"/"Home";
+    alt: "Home";
+  }
+  50.001%, 75% {
+    content: "​Hom";
+    content: "​Hom"/"Home";
+    alt: "Home";
+  }
+  75.001%, 100% {
+    content: "​Home";
+    content: "​Home"/"Home";
+    alt: "Home";
+  }
+}
+@keyframes typed-2 {
+  0%, 2.687172043% {
+    content: "​H";
+    content: "​H"/"Home";
+    alt: "Home";
+  }
+  2.688172043%, 5.375344086% {
+    content: "​Ho";
+    content: "​Ho"/"Home";
+    alt: "Home";
+  }
+  5.376344086%, 8.063516129% {
+    content: "​Hom";
+    content: "​Hom"/"Home";
+    alt: "Home";
+  }
+  8.064516129%, 66.6656666667% {
+    content: "​Home";
+    content: "​Home"/"Home";
+    alt: "Home";
+  }
+  66.6666666667%, 68.8162043011% {
+    content: "​Hom";
+    content: "​Hom"/"Home";
+    alt: "Home";
+  }
+  68.8172043011%, 70.9667419355% {
+    content: "​Ho";
+    content: "​Ho"/"Home";
+    alt: "Home";
+  }
+  70.9677419355%, 73.1172795699% {
+    content: "​H";
+    content: "​H"/"Home";
+    alt: "Home";
+  }
+  73.1182795699%, 100% {
+    content: "​";
+    content: "​"/"Home";
+    alt: "Home";
+  }
+}
 
 .display-column {
-  flex-basis: 66%;
+  flex-basis: 75%;
   border-left: 1px solid var(--retro-green);
-  animation: reveal 10s;
   overflow: hidden;
+  height: 100vh;
+}
+.display-column .bio-row {
+  display: flex;
+}
+.display-column .bio-row h1 {
+  text-align: center;
+  margin: 0px;
+}
+.display-column .bio-row img {
+  height: 10em;
+  border: 5px solid var(--retro-green);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+.display-column .education-row {
+  border: 1px solid green;
+  display: flex;
+}
+.display-column .education-row:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  color: red;
+  text-align: center;
+}
+.display-column .education-row:nth-child(2) img {
+  height: 200px;
 }
 
 @keyframes blink {
@@ -331,7 +609,6 @@ body {
 @keyframes reveal {
   0% {
     height: 0vh;
-    background: red;
   }
   100% {
     height: 100vh;

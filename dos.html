@@ -11,31 +11,56 @@
     <div class="ui-column">
         <ul>
             <li class="cursor loading">loading</li>
+            <li class="home option"></li>
             <li class="about-me option"></li>
             <li class="portfolio option"></li>
         </ul>
     </div> 
     <div class="display-column">
-        <img src="/images/32.jpg"/>
+        <div class="bio-row">
+            <img src="/images/33.png"/>
+    
+                <h1>bio</h1>
+                <p>I'm a self-taught developer humbly learning everything I can to build things that are cool and useful. My core competencies are Javascript, Bootstrap and React with some experience in MongoDB, Express, and Node. I have a bachelor's degree from Allegheny College in political science, a blue belt in Brazilian Jiu Jitsu, and I spend most of my life trying not to eat candy for every meal.</p>
+  
+            
+        </div>
+        <div class="education-row">
+            <div class="high-school">
+                <img class="mt-lebanon" src="/images/36.png">
+                <p>Mt. Lebanon Highschool</p>
+                <h5>2006</h5>
+            </div>
+            <div class="college">
+                <img class="allegheny" src="/images/111.png"/>
+            </div>
+            
+        </div>
+        <!-- <img src="/images/32.jpg"/> -->
+        
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>   
     <script>
-        function renderTiming(loading, typeOptionTwo, highlightOption){
+        function renderTiming(loading, typeOptionTwo, typeOptionThree, highlightOption){
             setTimeout(()=>{
-            $('.loading').removeClass('cursor')
-            $('.about-me').addClass('typing cursor')
+            $('.loading').removeClass('cursor').css('display', 'none')
+            $('.home').addClass('typing cursor')
         }, loading)
         setTimeout(()=>{
-            $('.about-me').removeClass('cursor')
-            $('.portfolio').addClass('typing cursor')
+            $('.home').removeClass('cursor')
+            $('.about-me').addClass('typing cursor')
         }, typeOptionTwo)
         setTimeout(()=>{
+            $('.about-me').removeClass('cursor');
+            $('.portfolio').addClass('typing cursor')
+        }, typeOptionThree)
+        setTimeout(()=>{
             $('.portfolio').removeClass('cursor')
-            $('.about-me').addClass('highlighted')
+            $('.home').addClass('highlighted')
         }, highlightOption)
         }
-        renderTiming(5000, 7500, 11000);
+        renderTiming(5000, 7500, 11000, 13000);
         
     </script> 
 </body>
