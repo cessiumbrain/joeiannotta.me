@@ -13,6 +13,7 @@ body {
   flex-direction: row;
   font-size: 1.5em;
   animation: textShadow 1.6s infinite;
+  overflow: hidden;
 }
 
 body::before {
@@ -572,6 +573,15 @@ body::before {
 .display-column .bio-row {
   display: flex;
 }
+.display-column .bio-row .bio-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.display-column .bio-row .bio-wrapper p {
+  text-align: center;
+  margin: 0px;
+}
 .display-column .bio-row h1 {
   text-align: center;
   margin: 0px;
@@ -585,16 +595,20 @@ body::before {
   float: left;
 }
 .display-column .education-row {
-  border: 1px solid green;
-  display: flex;
-}
-.display-column .education-row:nth-child(2) {
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
-  color: red;
-  text-align: center;
 }
-.display-column .education-row:nth-child(2) img {
+.display-column .education-row .high-school, .display-column .education-row .college {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.display-column .education-row .high-school p, .display-column .education-row .high-school h5, .display-column .education-row .college p, .display-column .education-row .college h5 {
+  margin: 0px;
+}
+.display-column .education-row .high-school img, .display-column .education-row .college img {
   height: 200px;
 }
 

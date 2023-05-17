@@ -19,9 +19,11 @@
     <div class="display-column">
         <div class="bio-row">
             <img src="/images/33.png"/>
-    
+            <div class="bio-wrapper">
                 <h1>bio</h1>
-                <p>I'm a self-taught developer humbly learning everything I can to build things that are cool and useful. My core competencies are Javascript, Bootstrap and React with some experience in MongoDB, Express, and Node. I have a bachelor's degree from Allegheny College in political science, a blue belt in Brazilian Jiu Jitsu, and I spend most of my life trying not to eat candy for every meal.</p>
+                <p>I'm a self-taught developer humbly learning everything I can to build things that are cool and useful. My core competencies are Javascript, Bootstrap and React with some experience in MongoDB, Express, and Node. I have a bachelor's degree from Allegheny College in political science, a blue belt in Brazilian Jiu Jitsu, and I spend most of my life trying not to eat candy for every meal. </p>
+            </div>
+                
   
             
         </div>
@@ -33,6 +35,8 @@
             </div>
             <div class="college">
                 <img class="allegheny" src="/images/111.png"/>
+                <p>Allegheny College</p>
+                <h5>2010</h5>
             </div>
             
         </div>
@@ -60,8 +64,32 @@
             $('.home').addClass('highlighted')
         }, highlightOption)
         }
-        renderTiming(5000, 7500, 11000, 13000);
+        renderTiming(2000, 3500, 6000, 11000);
         
+        const home = document.querySelector('.home')
+        const aboutMe = document.querySelector('.about-me')
+        const portfolio = document.querySelector('.portfolio')
+        
+        const menuArray = [home, aboutMe, portfolio]
+
+        document.addEventListener('keydown', (e)=>changeActiveElement(e))
+        
+        console.log(menuArray)
+        let currentElementIndex = 0
+
+        function changeActiveElement(e) {
+            
+            if(e.key === 'ArrowUp' && currentElementIndex>0){
+                currentElementIndex--
+                menuArray[currentElementIndex].classList.add('highlighted')
+                menuArray[currentElementIndex+1].classList.remove('highlighted')
+            } else if(e.key==='ArrowDown' && currentElementIndex <2) {
+                currentElementIndex++
+                console.log(menuArray[currentElementIndex])
+                menuArray[currentElementIndex].classList.add('highlighted')
+                menuArray[currentElementIndex-1].classList.remove('highlighted')
+            }
+        }
     </script> 
 </body>
 </html>
