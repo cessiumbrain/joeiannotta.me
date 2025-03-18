@@ -1,0 +1,66 @@
+body {
+  font-family: "Barriecito", system-ui;
+  background: rgb(249, 192, 130);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body img.rotate.tofu {
+  animation: rotate 10s infinite;
+}
+body img.jump.tofu-squint {
+  animation: jump 0.5s infinite ease-in-out;
+}
+body h1 {
+  text-align: center;
+}
+body .stopped-div, body .clock-running {
+  display: flex;
+  flex-direction: column;
+}
+body .stopped-div label, body .clock-running label {
+  font-size: 1.5rem;
+}
+body .stopped-div input, body .clock-running input {
+  height: 2.5rem;
+  border-radius: 10px;
+}
+body .stopped-div button, body .clock-running button {
+  background: rgb(62, 168, 248);
+  margin-top: 10px;
+  height: 2.5rem;
+  border-radius: 10px;
+}
+body .running-div {
+  text-align: center;
+  display: none;
+  font-size: 3rem;
+  justify-content: center;
+  flex-direction: column;
+}
+body .running-div button {
+  background: rgb(62, 168, 248);
+  margin-top: 10px;
+  height: 2.5rem;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+}
+
+@keyframes rotate {
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}/*# sourceMappingURL=creed.css.map */

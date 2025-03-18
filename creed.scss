@@ -1,0 +1,80 @@
+$primary-orange:  rgb(249, 192, 130);
+$primary-blue: rgb(62, 168, 248);
+
+
+body {
+    img.rotate.tofu {
+        animation: rotate 10s infinite;
+    }
+    img.jump.tofu-squint{
+            animation: jump 0.5s infinite ease-in-out;
+          
+    }
+    h1{
+        text-align: center;
+    }
+    font-family: "Barriecito", system-ui;
+    background: $primary-orange;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .stopped-div,.clock-running{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 1.5rem;
+        }
+        input {
+        height: 2.5rem;
+        border-radius: 10px;
+    }
+
+    button {
+        background: $primary-blue;
+        margin-top: 10px;
+        height: 2.5rem;
+        border-radius: 10px;
+    }
+    }
+    .running-div{
+        text-align: center;
+        display: none;
+        font-size: 3rem;
+        justify-content: center;
+        flex-direction: column;
+        .time-display {
+            
+        }
+        
+        button {
+            background: $primary-blue;
+            margin-top: 10px;
+            height: 2.5rem;
+            border-radius: 10px;
+            display: block;
+            width: 100%;
+        }
+    }
+    
+}
+
+@keyframes rotate {
+    25% {
+        transform: rotate(5deg);
+    
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+@keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
